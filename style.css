@@ -4,7 +4,7 @@
     --surface-color: #1e1e1e;
     --primary-text-color: #ffffff;
     --secondary-text-color: #b3b3b3;
-    --accent-color: #bb86fc;
+    --accent-color: #E53935; /* Rojo para el acento */
 }
 
 * {
@@ -44,6 +44,11 @@ header {
     border-bottom: 1px solid #333;
 }
 
+header h1 {
+    color: var(--accent-color);
+    font-size: 2rem; /* Un poco más grande para darle énfasis */
+}
+
 footer {
     border-top: 1px solid #333;
 }
@@ -75,6 +80,7 @@ main.video-scroller {
 .text-content h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    color: var(--accent-color);
 }
 
 .text-content p {
@@ -124,11 +130,34 @@ main.video-scroller {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 #mute-button:hover {
     transform: scale(1.1);
+    background-color: var(--accent-color);
+}
+
+/* --- Estilo de la Barra de Scroll (para Webkit y Firefox) --- */
+main.video-scroller {
+    /* Para Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) var(--surface-color);
+}
+
+main.video-scroller::-webkit-scrollbar {
+    /* Para Chrome, Safari, Edge */
+    width: 10px;
+}
+
+main.video-scroller::-webkit-scrollbar-track {
+    background: var(--surface-color);
+}
+
+main.video-scroller::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 20px;
+    border: 2px solid var(--surface-color);
 }
 
 /* Video Horizontal por defecto (16:9) */
