@@ -35,22 +35,39 @@ body {
 header, footer {
     flex-shrink: 0; /* Evita que se encojan */
     padding: 1rem;
-    text-align: center;
     background-color: var(--surface-color);
     z-index: 10;
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid #333;
 }
 
-header h1 {
+.header-title {
+    text-align: left;
+}
+
+.header-title h1 {
     color: var(--accent-color);
-    font-size: 2rem; /* Un poco más grande para darle énfasis */
+    font-size: 2rem;
 }
 
 footer {
+    text-align: center;
     border-top: 1px solid #333;
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: var(--primary-text-color);
 }
 
 main.video-scroller {
@@ -85,7 +102,7 @@ main.video-scroller {
 
 .text-content p {
     font-size: 1rem;
-    color: var(--secondary-text-color);
+    color: var(--primary-text-color);
 }
 
 /* --- Contenedor del Iframe --- */
@@ -136,6 +153,19 @@ main.video-scroller {
 #mute-button:hover {
     transform: scale(1.1);
     background-color: var(--accent-color);
+}
+
+/* --- Estilos del Footer --- */
+.social-link svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--primary-text-color); /* Color blanco por defecto */
+    transition: transform 0.2s ease, fill 0.2s ease; /* Transición suave de color y tamaño */
+}
+
+.social-link:hover svg {
+    transform: scale(1.15);
+    fill: var(--accent-color); /* Color rojo al pasar el ratón */
 }
 
 /* --- Estilo de la Barra de Scroll (para Webkit y Firefox) --- */
