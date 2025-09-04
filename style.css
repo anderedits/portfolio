@@ -5,7 +5,6 @@
     --primary-text-color: #ffffff;
     --secondary-text-color: #b3b3b3;
     --accent-color: #bb86fc;
-    --border-radius: 8px;
 }
 
 * {
@@ -14,107 +13,98 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
+    height: 100%;
+    overflow: hidden; /* Evita el scroll en la página principal */
     font-family: 'Inter', sans-serif;
     background-color: var(--background-color);
     color: var(--primary-text-color);
-    line-height: 1.6;
 }
 
 a {
     color: var(--accent-color);
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
-a:hover {
-    color: var(--primary-text-color);
+/* --- Diseño Principal (Header, Main, Footer) --- */
+body {
+    display: flex;
+    flex-direction: column;
 }
 
-/* --- Estructura Principal --- */
-header, main, footer {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 0;
+header, footer {
+    flex-shrink: 0; /* Evita que se encojan */
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--surface-color);
+    z-index: 10;
 }
 
 header {
-    text-align: center;
-    border-bottom: 1px solid var(--surface-color);
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-header p {
-    font-size: 1.2rem;
-    color: var(--secondary-text-color);
+    border-bottom: 1px solid #333;
 }
 
 footer {
+    border-top: 1px solid #333;
+}
+
+main.video-scroller {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory; /* Activa el scroll snap vertical */
+}
+
+/* --- Diapositivas de Video --- */
+.video-slide {
+    height: 100%;
+    width: 100%;
+    scroll-snap-align: start; /* Cada slide se alinea con el inicio del contenedor */
+    display: flex;
+    flex-direction: column; /* Apila el video y el texto verticalmente */
+    justify-content: center;
+    align-items: center;
+    padding: 1rem; /* Reducido para dar más espacio */
+    gap: 1rem; /* Reducido para dar más espacio */
+}
+
+.text-content {
     text-align: center;
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--surface-color);
-    color: var(--secondary-text-color);
+    max-width: 600px; /* Evita que el texto sea demasiado ancho */
 }
 
-/* --- Galería de Videos --- */
-.video-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+.text-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.video-card {
-    background-color: var(--surface-color);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.video-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.video-card h3 {
-    font-size: 1.4rem;
-    padding: 1rem 1.5rem 0.5rem;
-}
-
-.video-card p {
+.text-content p {
     font-size: 1rem;
     color: var(--secondary-text-color);
-    padding: 0 1.5rem 1.5rem;
 }
 
-/* --- Contenedor de Video Responsive --- */
+/* --- Contenedor del Iframe --- */
 .video-container {
     position: relative;
+    flex-grow: 1; /* Ocupa el espacio vertical restante en la diapositiva */
+    min-height: 0; /* Permite que el contenedor se encoja si es necesario */
     width: 100%;
-    padding-top: 56.25%; /* Proporción 16:9 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     border: 0;
 }
 
-/* --- Media Queries para pantallas más pequeñas --- */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-    .video-gallery {
-        grid-template-columns: 1fr;
-    }
+/* Video Horizontal por defecto (16:9) */
+.video-slide:not(.vertical) .video-container iframe {
+    aspect-ratio: 16 / 9;
+}
+
+/* Modificador para video Vertical (9:16) */
+.vertical .video-container iframe {
+    aspect-ratio: 9 / 16;
 }

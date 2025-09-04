@@ -16,45 +16,50 @@
         <p>Editor de Video | Creador de Contenido</p>
     </header>
 
-    <main>
-        <section class="video-gallery">
-            <article class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/7ya5wQ-78FQ" title="Art of Egypt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <h3>Título del Proyecto 1</h3>
-                <p>Una breve descripción de este proyecto, el cliente, o el objetivo del video.</p>
-            </article>
+    <main class="video-scroller">
+        
+        <!-- INICIO DE LA ZONA DE VIDEOS -->
+        <!-- Para añadir un video, copia y pega una de las secciones <section> de abajo. -->
+        <!-- Cambia el ID del video en la URL de YouTube: "https://www.youtube.com/embed/ID_DEL_VIDEO" -->
+        <!-- Si el video es VERTICAL, añade la clase "vertical" a la etiqueta <section> -->
+        <!-- Edita el título y la descripción dentro de la sección "text-content" -->
 
-            <article class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <h3>Título del Proyecto 2</h3>
-                <p>Una breve descripción de este proyecto, el cliente, o el objetivo del video.</p>
-            </article>
-
-            <article class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <h3>Título del Proyecto 3</h3>
-                <p>Una breve descripción de este proyecto, el cliente, o el objetivo del video.</p>
-            </article>
-
-            <article class="video-card">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <h3>Título del Proyecto 4</h3>
-                <p>Una breve descripción de este proyecto, el cliente, o el objetivo del video.</p>
-            </article>
+        <section class="video-slide">
+            <div class="text-content">
+                <h3>Proyecto 1: Anuncio Comercial</h3>
+                <p>Breve descripción del objetivo del video, el cliente, o el software utilizado.</p>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/7ya5wQ-78FQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </section>
+
+        <section class="video-slide vertical">
+            <div class="text-content">
+                <h3>Proyecto 2: Reel para Redes</h3>
+                <p>Este es un ejemplo de video vertical, ideal para TikTok o Instagram Reels.</p>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/LXb3EKWsInQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="video-slide">
+            <div class="text-content">
+                <h3>Proyecto 3: Corto Documental</h3>
+                <p>Descripción de este proyecto.</p>
+            </div>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/Y_plhk1tZ_U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <!-- FIN DE LA ZONA DE VIDEOS -->
+
     </main>
 
     <footer>
         <p>Contacto: <a href="mailto:email@ejemplo.com">email@ejemplo.com</a></p>
-        <!-- Añade aquí más enlaces a redes sociales si quieres -->
     </footer>
 
 </body>
