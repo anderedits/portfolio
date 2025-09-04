@@ -143,6 +143,7 @@ main.video-scroller {
     flex-grow: 1; /* Ocupa el espacio restante */
     overflow-y: scroll;
     scroll-snap-type: y mandatory; /* Activa el scroll snap vertical */
+    scroll-snap-stop: always; /* Añade esta línea */
 }
 
 /* --- Diapositivas de Video --- */
