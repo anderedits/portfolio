@@ -16,7 +16,8 @@
 html, body {
     height: 100%;
     overflow: hidden; /* Evita el scroll en la página principal */
-    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600; /* Hacemos la fuente más gruesa por defecto */
     color: var(--primary-text-color);
     background-color: var(--background-color); /* Fondo sólido como base */
 
@@ -150,7 +151,7 @@ main.video-scroller {
 }
 
 .text-content h3 {
-    font-size: 1.5rem;
+    font-size: 1.6rem; /* Un poco más grande */
     margin-bottom: 0.5rem;
     color: var(--accent-color);
 }
