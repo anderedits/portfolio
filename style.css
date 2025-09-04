@@ -17,8 +17,59 @@ html, body {
     height: 100%;
     overflow: hidden; /* Evita el scroll en la página principal */
     font-family: 'Inter', sans-serif;
-    background-color: var(--background-color);
     color: var(--primary-text-color);
+    background-color: var(--background-color); /* Fondo sólido como base */
+}
+
+/* --- Fondo de Burbujas Animadas --- */
+@keyframes moveBlob1 {
+    0%   { transform: translate(0, 0) scale(1); }
+    50%  { transform: translate(40vw, 50vh) scale(1.2); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes moveBlob2 {
+    0%   { transform: translate(70vw, 60vh) scale(1); }
+    50%  { transform: translate(30vw, 10vh) scale(0.8); }
+    100% { transform: translate(70vw, 60vh) scale(1); }
+}
+
+@keyframes moveBlob3 {
+    0%   { transform: translate(10vw, 80vh) scale(0.9); }
+    50%  { transform: translate(60vw, 20vh) scale(1.1); }
+    100% { transform: translate(10vw, 80vh) scale(0.9); }
+}
+
+.background-blob {
+    position: absolute;
+    z-index: 0; /* Detrás del contenido pero visible */
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.15;
+}
+
+.blob1 {
+    width: 500px;
+    height: 500px;
+    background-color: var(--accent-color);
+    animation: moveBlob1 40s infinite alternate;
+}
+
+.blob2 {
+    width: 450px;
+    height: 450px;
+    background-color: #4a4a4a; /* Un tono de gris */
+    animation: moveBlob2 35s infinite alternate;
+}
+
+.blob3 {
+    width: 300px;
+    height: 300px;
+    background-color: var(--accent-color);
+    opacity: 0.1;
+    animation: moveBlob3 30s infinite alternate;
 }
 
 a {
