@@ -95,7 +95,8 @@ function setupMuteButton() {
             }
         }
 
-        // Actualiza el icono del botón
+        // Actualiza el icono y la clase del botón
         muteButton.textContent = isMuted ? '🔇' : '🔊';
+        muteButton.classList.toggle('unmuted', !isMuted);
     });
 }
